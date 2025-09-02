@@ -115,7 +115,7 @@ text
 ## 5. Complete Example
 
 Here's a full FlowZap Code sample demonstrating all concepts:
-
+```
 couple { # Couple planning wedding
 n1: circle label:"Start Planning"
 n2: rectangle label:"Define Budget & Priorities"
@@ -154,7 +154,7 @@ n11.handle(right) -> n12.handle(left) [label="No"]
 n11.handle(bottom) -> n12.handle(bottom) [label="Yes"]
 n12.handle(top) -> couple.n3.handle(bottom) [label="Sends"]
 }
-
+```
 
 ---
 
@@ -188,5 +188,6 @@ n12.handle(top) -> couple.n3.handle(bottom) [label="Sends"]
 ---
 
 **Ready to start?** Write or paste your FlowZap Code into the editor and click "Update Diagram." Your process comes to life—**no technical skills required!**
+
 
 For more examples and details, visit [flowzap.xyz/flowzap-code](https://flowzap.xyz/flowzap-code) and [flowzap.xyz/examples](https://flowzap.xyz/examples).
