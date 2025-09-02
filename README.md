@@ -10,7 +10,7 @@
 ---
 
 ## ⚡ Quick example: A wedding planning process
-
+```
 couple { # couple
   n1: circle label:"Start Planning"
   n2: rectangle label:"Define Budget & Priorities"
@@ -46,7 +46,7 @@ vendors { # vendors
   n11.handle(bottom) -> n12.handle(bottom) [label="Yes"]
   n12.handle(top) -> couple.n3.handle(bottom) [label="Sends"]
 }
-
+```
 
 
 Create your free account on https://flowzap.xyz. Then paste the above into your FlowZap workspace to visualize your first process diagram.
@@ -72,5 +72,6 @@ Create your free account on https://flowzap.xyz. Then paste the above into your 
 ---
 
 ## License
+
 
 MIT — open for use, learning, and remixing. See [LICENSE](LICENSE).
