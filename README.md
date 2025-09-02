@@ -73,5 +73,5 @@ Create your free account on https://flowzap.xyz. Then paste the above into your 
 
 ## License
 
+See [LICENSE](LICENSE).
 
-MIT — open for use, learning, and remixing. See [LICENSE](LICENSE).
