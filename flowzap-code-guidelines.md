@@ -274,6 +274,7 @@ n13.handle(top) -> Application.n6.handle(bottom) [label="Error 401"]
 - Do **not** introduce other diagram syntaxes (Mermaid, UML, JSON, YAML, XML).
 - Do **not** reuse node IDs (`n1`, `n2`, …) anywhere in the diagram; each ID must be unique globally.
 - Do **not** add additional comments besides the `# Display Label` right after each lane’s opening brace.
+- Do **not** use loops outside of Lane braces. Loops should only appear inside a Lane's braces `{...}`
 
 ---
 
