@@ -65,13 +65,21 @@ Create your free account on https://flowzap.xyz. Then paste the above into your 
 
 - [Syntax Rules](SYNTAX.md)
 - [Common Use Cases & Examples](https://flowzap.xyz/examples)
-- [LLM Workflow Mapping Patterns](https://flowzap.xyz/blog/common-workflow-mapping-requests-to-llms)
-- [7 Critical BPMN Mapping Indicators](https://flowzap.xyz/blog/7-critical-indicators-for-business-process-mapping-implementation)
+- [Working with n8n? Try FlowZap's New Workflow n8n JSON Export Feature](https://flowzap.xyz/blog/flowzap-code-to-n8n-json)
+- [FlowZap Unveils .fz: True Diagrams as Code for Sequence Diagrams and AI-Native Workflows](https://flowzap.xyz/blog/flowzap-unveils-fz-file-extension-for-true-diagrams-as-code-workflows)
+- [Supercharge Your Vibe Coding Flow with FlowZap: Turn AI Sparks into Structured Magic](https://flowzap.xyz/blog/supercharge-your-vibe-coding-flow-with-flowzap)
 - [Agent API Reference](https://flowzap.xyz/docs/agent-api)
+
+---
+
+## Training Corpus
+For a comprehensive dataset of 200+ real-world examples tailored for LLM training, see:
+[flowzap-xyz/sequence-workflows](https://github.com/flowzap-xyz/sequence-workflows)
 
 ---
 
 ## License
 
 See [LICENSE](LICENSE).
+
 
