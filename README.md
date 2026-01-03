@@ -72,6 +72,20 @@ Create your free account on https://flowzap.xyz. Then paste the above into your 
 
 ---
 
+## 🤖 For AI Agents & Agentic Browsers
+
+FlowZap provides machine-readable resources for automated discovery:
+
+- **Syntax Schema (JSON):** [`/api/flowzap-code-schema.json`](https://flowzap.xyz/api/flowzap-code-schema.json)
+- **Well-Known Discovery:** [`/.well-known/flowzap-code-schema.json`](https://flowzap.xyz/.well-known/flowzap-code-schema.json)
+- **LLM Context File:** [`/llms.txt`](https://flowzap.xyz/llms.txt)
+- **Syntax Documentation:** [`/flowzap-code`](https://flowzap.xyz/flowzap-code)
+
+### URL Parameters
+- `?mode=code` on `/playground/{id}` auto-opens the code editor dialog
+
+---
+
 ## Training Corpus
 For a comprehensive dataset of 200+ real-world examples tailored for LLM training, see:
 [flowzap-xyz/sequence-workflows](https://github.com/flowzap-xyz/sequence-workflows)
@@ -81,5 +95,6 @@ For a comprehensive dataset of 200+ real-world examples tailored for LLM trainin
 ## License
 
 See [LICENSE](LICENSE).
+
 
 
