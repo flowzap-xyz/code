@@ -32,7 +32,7 @@ planner { # planner
   n6.handle(right) -> n7.handle(left)
   n7.handle(right) -> n8.handle(left)
   n8.handle(right) -> n9.handle(left)
-  n7.handle(bottom) -> vendors.n10.handle(top) [label:"Requests"]
+  n7.handle(bottom) -> vendors.n10.handle(top) [label="Requests"]
 }
 
 vendors { # vendors
@@ -95,6 +95,7 @@ For a comprehensive dataset of 200+ real-world examples tailored for LLM trainin
 ## License
 
 See [LICENSE](LICENSE).
+
 
 
 
