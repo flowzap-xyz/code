@@ -63,7 +63,8 @@ Create your free account on https://flowzap.xyz. Then paste the above into your 
 
 ## 📖 Documentation
 
-- [Syntax Rules](SYNTAX.md)
+- [Syntax Rules](SYNTAX.md) — includes sequence diagram best practices (v1.3.4)
+- [AI Coding Guidelines](flowzap-code-guidelines.md) — instructions for AI assistants generating FlowZap Code
 - [Common Use Cases & Examples](https://flowzap.xyz/examples)
 - [Working with n8n? Try FlowZap's New Workflow n8n JSON Export Feature](https://flowzap.xyz/blog/flowzap-code-to-n8n-json)
 - [FlowZap Unveils .fz: True Diagrams as Code for Sequence Diagrams and AI-Native Workflows](https://flowzap.xyz/blog/flowzap-unveils-fz-file-extension-for-true-diagrams-as-code-workflows)

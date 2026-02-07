@@ -1,6 +1,6 @@
 # FlowZap DSL Syntax Guide
 
-> _Last updated: September 2025 | Official docs: https://flowzap.xyz/flowzap-code
+> _Last updated: February 2026 | Official docs: https://flowzap.xyz/flowzap-code
 
 **FlowZap Code** is a straightforward domain-specific language (DSL) designed for describing business process diagrams visually. Built for real business users—no programming background required.
 
@@ -112,7 +112,49 @@ text
 ---
 
 
-## 5. Complete Example
+## 5. Sequence Diagram Best Practices
+
+FlowZap Code renders as both Workflow and Sequence views. The Sequence view draws messages top-to-bottom in **edge definition order**. Follow these rules for clean sequence diagrams in multi-lane code:
+
+- **Request-response pairing** — Every cross-lane request edge must have a corresponding return edge. If Lane A sends a message to Lane B, Lane B must eventually send a response back.
+- **Chronological edge ordering** — Define edges in the order they happen in time. The sequence diagram renders messages top-to-bottom based on edge definition order, not node IDs.
+- **No orphaned nodes** — Every node must participate in at least one edge (as source or target).
+- **Separate async flows** — If a diagram contains independent flows (e.g., a main request path and a background monitoring path), define all main-flow edges first, then the async/background edges. Never interleave unrelated flows.
+
+**Do: Request with matching response**
+```
+Client { # Client
+n1: rectangle label:"Send request"
+n2: rectangle label:"Receive response"
+n1.handle(bottom) -> Server.n3.handle(top) [label="HTTP GET"]
+}
+Server { # Server
+n3: rectangle label:"Process request"
+n4: rectangle label:"Return data"
+n3.handle(right) -> n4.handle(left)
+n4.handle(top) -> Client.n2.handle(bottom) [label="200 OK"]
+}
+```
+
+**Don't: Missing response, orphaned node**
+```
+Client { # Client
+n1: rectangle label:"Send request"
+n2: rectangle label:"Receive response"
+n1.handle(bottom) -> Server.n3.handle(top) [label="HTTP GET"]
+}
+Server { # Server
+n3: rectangle label:"Process request"
+n4: rectangle label:"Return data"
+n3.handle(right) -> n4.handle(left)
+}
+```
+↑ `n2` is orphaned (never used in any edge) and Server never sends a response back to Client.
+
+---
+
+
+## 6. Complete Example
 
 Here's a full FlowZap Code sample demonstrating all concepts:
 ```
@@ -158,7 +200,7 @@ n12.handle(top) -> couple.n3.handle(bottom) [label="Sends"]
 
 ---
 
-## 6. Tips & Best Practices
+## 7. Tips & Best Practices
 
 **Node Management:**
 - Keep IDs short: use `n1`, `n2`, etc.

@@ -24,6 +24,7 @@
 ## Global constraints (very important)
 
 - Node IDs must follow the pattern `n1`, `n2`, `n3`, … and must be globally unique across **all** lanes in a single diagram.
+- Node numbering must be **sequential with no gaps** (e.g., `n1`, `n2`, `n3`, not `n1`, `n3`, `n5`). Always use consecutive integers starting from 1.
 - Only four shapes are allowed for nodes: `circle`, `rectangle`, `diamond`, `taskbox`.
 - Node attributes use `key:"value"` with a colon, while edge labels use `label="value"` with an equals sign inside square brackets.
 - Do not generate any Mermaid, PlantUML, or other diagram syntaxes such as `graph TD`, `sequenceDiagram`, `participant`, or `-->`.
@@ -133,6 +134,50 @@ n8.handle(top) -> User.n2.handle(bottom) [label="No - Error"]
 
 - Keep the edge definition inside the braces of the **origin** lane.
 - Never omit the lane prefix for cross-lane targets; always write `LaneId.nX`.
+
+---
+
+## Sequence diagram best practices
+
+FlowZap Code renders as both Workflow and Sequence views. The Sequence view draws messages top-to-bottom in **edge definition order**. Follow these rules for clean, logical sequence diagrams in multi-lane code.
+
+- **Request-response pairing** — Every cross-lane request edge must have a corresponding return edge. If Lane A sends a message to Lane B, Lane B must eventually send a response back. Missing responses create incomplete, misleading diagrams.
+- **Chronological edge ordering** — Define edges in the order they happen in time. The sequence diagram renders messages top-to-bottom based on edge definition order, not node IDs. Out-of-order edges produce confusing arrow sequences.
+- **No orphaned nodes** — Every node must participate in at least one edge (as source or target). Nodes without any edges appear as disconnected, meaningless steps in the sequence diagram.
+- **Separate async flows** — If a diagram contains independent flows (e.g., a main request path and a background monitoring path), define all main-flow edges first, then the async/background edges. Never interleave unrelated flows.
+
+**Do: Request with matching response**
+
+```
+Client { # Client
+n1: rectangle label:"Send request"
+n2: rectangle label:"Receive response"
+n1.handle(bottom) -> Server.n3.handle(top) [label="HTTP GET"]
+}
+Server { # Server
+n3: rectangle label:"Process request"
+n4: rectangle label:"Return data"
+n3.handle(right) -> n4.handle(left)
+n4.handle(top) -> Client.n2.handle(bottom) [label="200 OK"]
+}
+```
+
+**Don't: Missing response, orphaned node**
+
+```
+Client { # Client
+n1: rectangle label:"Send request"
+n2: rectangle label:"Receive response"
+n1.handle(bottom) -> Server.n3.handle(top) [label="HTTP GET"]
+}
+Server { # Server
+n3: rectangle label:"Process request"
+n4: rectangle label:"Return data"
+n3.handle(right) -> n4.handle(left)
+}
+```
+
+Problem: `n2` is orphaned (no edges), and there is no return edge from Server to Client. The sequence diagram shows a request going out but never coming back.
 
 ---
 
@@ -273,8 +318,9 @@ n13.handle(top) -> Application.n6.handle(bottom) [label="Error 401"]
 - Do **not** omit lane prefixes on cross-lane edges (e.g., `n3 -> n5` is invalid when crossing lanes).
 - Do **not** introduce other diagram syntaxes (Mermaid, UML, JSON, YAML, XML).
 - Do **not** reuse node IDs (`n1`, `n2`, …) anywhere in the diagram; each ID must be unique globally.
-- Do **not** add additional comments besides the `# Display Label` right after each lane’s opening brace.
-- Do **not** use loops outside of Lane braces. Loops should only appear inside a Lane's braces `{...}`
+- Do **not** skip node numbers. Node IDs must be sequential with no gaps (e.g., `n1`, `n2`, `n3`, not `n1`, `n3`, `n5`). If you have 14 nodes, they must be numbered `n1` through `n14` consecutively.
+- Do **not** add additional comments besides the `# Display Label` right after each lane's opening brace.
+- Do **not** use loops outside of Lanes. A loop should be positionned inside a Lane's braces `{...}`.
 
 ---
 
