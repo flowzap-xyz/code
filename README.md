@@ -4,8 +4,9 @@
 
 - **Website:** https://flowzap.xyz
 - **Syntax Guide:** [flowzap.xyz/flowzap-code](https://flowzap.xyz/flowzap-code)
-- **Examples:** [https://flowzap.xyz/examples](https://flowzap.xyz/examples)
+- **Templates:** [https://flowzap.xyz/examples](https://flowzap.xyz/templates)
 - **API:** [https://flowzap.xyz/docs/agent-api](https://flowzap.xyz/docs/agent-api)
+- **MCP** [https://flowzap.xyz/docs/agent-api](https://flowzap.xyz/docs/mcp)
 
 ---
 
@@ -65,11 +66,10 @@ Create your free account on https://flowzap.xyz. Then paste the above into your 
 
 - [Syntax Rules](SYNTAX.md) — includes sequence diagram best practices (v1.3.4)
 - [AI Coding Guidelines](flowzap-code-guidelines.md) — instructions for AI assistants generating FlowZap Code
-- [Common Use Cases & Examples](https://flowzap.xyz/examples)
+- [Vast Library of Examples](https://flowzap.xyz/templates)
 - [Working with n8n? Try FlowZap's New Workflow n8n JSON Export Feature](https://flowzap.xyz/blog/flowzap-code-to-n8n-json)
 - [FlowZap Unveils .fz: True Diagrams as Code for Sequence Diagrams and AI-Native Workflows](https://flowzap.xyz/blog/flowzap-unveils-fz-file-extension-for-true-diagrams-as-code-workflows)
 - [Supercharge Your Vibe Coding Flow with FlowZap: Turn AI Sparks into Structured Magic](https://flowzap.xyz/blog/supercharge-your-vibe-coding-flow-with-flowzap)
-- [Agent API Reference](https://flowzap.xyz/docs/agent-api)
 
 ---
 
@@ -96,6 +96,7 @@ For a comprehensive dataset of 200+ real-world examples tailored for LLM trainin
 ## License
 
 See [LICENSE](LICENSE).
+
 
 
 
