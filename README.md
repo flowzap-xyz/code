@@ -6,7 +6,7 @@
 - **Syntax Guide:** [flowzap.xyz/flowzap-code](https://flowzap.xyz/flowzap-code)
 - **Templates:** [https://flowzap.xyz/examples](https://flowzap.xyz/templates)
 - **MCP** [https://flowzap.xyz/docs/agent-api](https://flowzap.xyz/docs/mcp)
-- **SKILL** [https://github.com/flowzap-xyz/flowzap-mcp/tree/main/skills/flowzap-diagrams]
+- **SKILL** https://github.com/flowzap-xyz/flowzap-mcp/tree/main/skills/flowzap-diagrams
 - **API:** [https://flowzap.xyz/docs/agent-api](https://flowzap.xyz/docs/agent-api)
 
 ---
@@ -97,6 +97,7 @@ For a comprehensive dataset of 200+ real-world examples tailored for LLM trainin
 ## License
 
 See [LICENSE](LICENSE).
+
 
 
 
