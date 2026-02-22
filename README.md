@@ -5,8 +5,9 @@
 - **Website:** https://flowzap.xyz
 - **Syntax Guide:** [flowzap.xyz/flowzap-code](https://flowzap.xyz/flowzap-code)
 - **Templates:** [https://flowzap.xyz/examples](https://flowzap.xyz/templates)
-- **API:** [https://flowzap.xyz/docs/agent-api](https://flowzap.xyz/docs/agent-api)
 - **MCP** [https://flowzap.xyz/docs/agent-api](https://flowzap.xyz/docs/mcp)
+- **SKILL** [https://github.com/flowzap-xyz/flowzap-mcp/tree/main/skills/flowzap-diagrams]
+- **API:** [https://flowzap.xyz/docs/agent-api](https://flowzap.xyz/docs/agent-api)
 
 ---
 
@@ -50,7 +51,7 @@ vendors { # vendors
 ```
 
 
-Create your free account on https://flowzap.xyz. Then paste the above into your FlowZap workspace to visualize your first process diagram.
+Create your free account on https://flowzap.xyz. Then paste the above into your FlowZap workspace to visualize your first workflow, sequence and architecture diagram in seconds.
 
 ---
 
@@ -96,6 +97,7 @@ For a comprehensive dataset of 200+ real-world examples tailored for LLM trainin
 ## License
 
 See [LICENSE](LICENSE).
+
 
 
 
