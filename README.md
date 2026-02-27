@@ -1,13 +1,14 @@
 # FlowZap Code DSL — Official Syntax & Examples
 
-**FlowZap Code** is a simple domain-specific language (DSL) for collaborative business process mapping and workflow automation. Write natural, readable code to create flowcharts, swimlane diagrams, and process documentation. No technical skills needed!
+**FlowZap Code** is a simple domain-specific language (DSL) for collaborative business process mapping and workflow automation. Write natural, readable code to create flowcharts, swimlane diagrams, sequence diagrams, and architecture diagrams. No technical skills needed!
 
 - **Website:** https://flowzap.xyz
 - **Syntax Guide:** [flowzap.xyz/flowzap-code](https://flowzap.xyz/flowzap-code)
-- **Templates:** [https://flowzap.xyz/examples](https://flowzap.xyz/templates)
-- **MCP** [https://flowzap.xyz/docs/agent-api](https://flowzap.xyz/docs/mcp)
-- **SKILL** https://github.com/flowzap-xyz/flowzap-mcp/tree/main/skills/flowzap-diagrams
-- **API:** [https://flowzap.xyz/docs/agent-api](https://flowzap.xyz/docs/agent-api)
+- **AI Guidelines:** [flowzap.xyz/flowzap-code-guidelines.md](https://flowzap.xyz/flowzap-code-guidelines.md)
+- **Templates:** [flowzap.xyz/templates](https://flowzap.xyz/templates) — 250+ ready-to-use workflow, sequence and architecture diagram templates
+- **MCP Server:** [flowzap.xyz/docs/mcp](https://flowzap.xyz/docs/mcp) — for Claude Desktop, Cursor, Windsurf, and 8 more coding tools
+- **Agent Skill:** [skills.sh/flowzap-xyz/flowzap-mcp/flowzap-diagrams](https://skills.sh/flowzap-xyz/flowzap-mcp/flowzap-diagrams)
+- **npm:** [flowzap-mcp](https://www.npmjs.com/package/flowzap-mcp)
 
 ---
 
@@ -50,7 +51,6 @@ vendors { # vendors
 }
 ```
 
-
 Create your free account on https://flowzap.xyz. Then paste the above into your FlowZap workspace to visualize your first workflow, sequence and architecture diagram in seconds.
 
 ---
@@ -67,10 +67,19 @@ Create your free account on https://flowzap.xyz. Then paste the above into your 
 
 - [Syntax Rules](SYNTAX.md) — includes sequence diagram best practices (v1.3.4)
 - [AI Coding Guidelines](flowzap-code-guidelines.md) — instructions for AI assistants generating FlowZap Code
-- [Vast Library of Examples](https://flowzap.xyz/templates)
-- [Working with n8n? Try FlowZap's New Workflow n8n JSON Export Feature](https://flowzap.xyz/blog/flowzap-code-to-n8n-json)
+- [Download AI Guidelines](https://flowzap.xyz/flowzap-code-guidelines.md) — drop this file into your project's `/docs/` folder for AI coding tools
+- [Templates Library](https://flowzap.xyz/templates) — 250+ ready-to-use templates for workflows, sequences, and architecture diagrams
+- [Architecture Diagram Templates](https://flowzap.xyz/templates/architecture-diagram-templates) — 50 architecture diagram templates (Microservices, Event-Driven, CQRS, Serverless, Saga, and more)
+- [n8n Workflow JSON Examples](https://flowzap.xyz/templates/n8n-workflow-json-examples) — FlowZap Code to n8n JSON export
+- [Make.com Blueprint Examples](https://flowzap.xyz/templates/make-blueprint-json-examples) — FlowZap Code to Make.com JSON export
+
+### Blog
+
 - [FlowZap Unveils .fz: True Diagrams as Code for Sequence Diagrams and AI-Native Workflows](https://flowzap.xyz/blog/flowzap-unveils-fz-file-extension-for-true-diagrams-as-code-workflows)
 - [Supercharge Your Vibe Coding Flow with FlowZap: Turn AI Sparks into Structured Magic](https://flowzap.xyz/blog/supercharge-your-vibe-coding-flow-with-flowzap)
+- [Introducing the FlowZap MCP Server](https://flowzap.xyz/blog/introducing-the-flowzap-mcp-server)
+- [One Code, Three Views: Flowchart + Sequence + Architecture](https://flowzap.xyz/blog/flowzaps-game-changing-update-one-code-two-views)
+- [The Top 10 Workflows for CI/CD Pipeline Configuration](https://flowzap.xyz/blog/top-10-workflows-cicd)
 
 ---
 
@@ -81,10 +90,33 @@ FlowZap provides machine-readable resources for automated discovery:
 - **Syntax Schema (JSON):** [`/api/flowzap-code-schema.json`](https://flowzap.xyz/api/flowzap-code-schema.json)
 - **Well-Known Discovery:** [`/.well-known/flowzap-code-schema.json`](https://flowzap.xyz/.well-known/flowzap-code-schema.json)
 - **LLM Context File:** [`/llms.txt`](https://flowzap.xyz/llms.txt)
+- **Full LLM Context:** [`/llms-full.txt`](https://flowzap.xyz/llms-full.txt)
+- **AI Guidelines:** [`/flowzap-code-guidelines.md`](https://flowzap.xyz/flowzap-code-guidelines.md)
 - **Syntax Documentation:** [`/flowzap-code`](https://flowzap.xyz/flowzap-code)
+- **OpenAPI Spec:** [`/.well-known/openapi.json`](https://flowzap.xyz/.well-known/openapi.json)
+
+### MCP Server (v1.3.5)
+
+Install the `flowzap-mcp` npm package for any compatible coding tool:
+
+```json
+{
+  "mcpServers": {
+    "flowzap": {
+      "command": "npx",
+      "args": ["-y", "flowzap-mcp"]
+    }
+  }
+}
+```
+
+**Compatible with 11 coding tools:** Claude Desktop, Claude Code, Cursor, Windsurf IDE, OpenAI Codex, Warp Terminal, Zed Editor, Cline (VS Code), Roo Code (VS Code), Continue.dev, Sourcegraph Cody.
+
+**7 tools available:** `flowzap_validate`, `flowzap_create_playground`, `flowzap_get_syntax`, `flowzap_export_graph`, `flowzap_artifact_to_diagram`, `flowzap_diff`, `flowzap_apply_change`
 
 ### URL Parameters
 - `?mode=code` on `/playground/{id}` auto-opens the code editor dialog
+- `?code=<base64url>` on `/playground` loads FlowZap Code from URL (no API call needed)
 
 ---
 
@@ -97,10 +129,3 @@ For a comprehensive dataset of 200+ real-world examples tailored for LLM trainin
 ## License
 
 See [LICENSE](LICENSE).
-
-
-
-
-
-
-
