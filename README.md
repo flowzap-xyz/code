@@ -78,6 +78,7 @@ Create your free account on https://flowzap.xyz. Then paste the above into your 
 - [FlowZap Unveils .fz: True Diagrams as Code for Sequence Diagrams and AI-Native Workflows](https://flowzap.xyz/blog/flowzap-unveils-fz-file-extension-for-true-diagrams-as-code-workflows)
 - [Supercharge Your Vibe Coding Flow with FlowZap: Turn AI Sparks into Structured Magic](https://flowzap.xyz/blog/supercharge-your-vibe-coding-flow-with-flowzap)
 - [Introducing the FlowZap MCP Server](https://flowzap.xyz/blog/introducing-the-flowzap-mcp-server)
+- [The FlowZap Diagram Skill Is Live — Here's Why It Matters](https://flowzap.xyz/blog/new-flowzap-diagram-skill-makes-it-even-easier)
 - [One Code, Three Views: Flowchart + Sequence + Architecture](https://flowzap.xyz/blog/flowzaps-game-changing-update-one-code-two-views)
 - [The Top 10 Workflows for CI/CD Pipeline Configuration](https://flowzap.xyz/blog/top-10-workflows-cicd)
 
@@ -129,3 +130,4 @@ For a comprehensive dataset of 200+ real-world examples tailored for LLM trainin
 ## License
 
 See [LICENSE](LICENSE).
+
