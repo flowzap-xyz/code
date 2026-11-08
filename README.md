@@ -5,8 +5,8 @@
 - **Website:** https://flowzap.xyz
 - **Syntax Guide:** [flowzap.xyz/flowzap-code](https://flowzap.xyz/flowzap-code)
 - **AI Guidelines:** [flowzap.xyz/flowzap-code-guidelines.md](https://flowzap.xyz/flowzap-code-guidelines.md)
-- **Templates:** [flowzap.xyz/templates](https://flowzap.xyz/templates) — 250+ ready-to-use workflow, sequence and architecture diagram templates
-- **MCP Server:** [flowzap.xyz/docs/mcp](https://flowzap.xyz/docs/mcp) — for Claude Desktop, Cursor, Windsurf, and 8 more coding tools
+- **Templates:** [flowzap.xyz/templates](https://flowzap.xyz/templates) — 356 ready-to-use workflow, sequence, architecture and mind map templates
+- **MCP Server:** [flowzap.xyz/docs/mcp](https://flowzap.xyz/docs/mcp) — for Claude Desktop, Cursor, Antigravity, Devin Desktop and any other MCP client
 - **Agent Skill:** [skills.sh/flowzap-xyz/flowzap-mcp/flowzap-diagrams](https://skills.sh/flowzap-xyz/flowzap-mcp/flowzap-diagrams)
 - **npm:** [flowzap-mcp](https://www.npmjs.com/package/flowzap-mcp)
 
@@ -65,10 +65,10 @@ Create your free account on https://flowzap.xyz. Then paste the above into your 
 
 ## 📖 Documentation
 
-- [Syntax Rules](SYNTAX.md) — includes sequence diagram best practices (v1.3.4)
+- [Syntax Rules](SYNTAX.md) — includes sequence best practices, loops and the mind map rules
 - [AI Coding Guidelines](flowzap-code-guidelines.md) — instructions for AI assistants generating FlowZap Code
 - [Download AI Guidelines](https://flowzap.xyz/flowzap-code-guidelines.md) — drop this file into your project's `/docs/` folder for AI coding tools
-- [Templates Library](https://flowzap.xyz/templates) — 250+ ready-to-use templates for workflows, sequences, and architecture diagrams
+- [Templates Library](https://flowzap.xyz/templates) — 356 ready-to-use templates for workflows, sequences, architecture diagrams and mind maps
 - [Architecture Diagram Templates](https://flowzap.xyz/templates/architecture-diagram-templates) — 50 architecture diagram templates (Microservices, Event-Driven, CQRS, Serverless, Saga, and more)
 - [n8n Workflow JSON Examples](https://flowzap.xyz/templates/n8n-workflow-json-examples) — FlowZap Code to n8n JSON export
 - [Make.com Blueprint Examples](https://flowzap.xyz/templates/make-blueprint-json-examples) — FlowZap Code to Make.com JSON export
@@ -96,7 +96,7 @@ FlowZap provides machine-readable resources for automated discovery:
 - **Syntax Documentation:** [`/flowzap-code`](https://flowzap.xyz/flowzap-code)
 - **OpenAPI Spec:** [`/.well-known/openapi.json`](https://flowzap.xyz/.well-known/openapi.json)
 
-### MCP Server (v1.3.5)
+### MCP Server (v2.2.1)
 
 Install the `flowzap-mcp` npm package for any compatible coding tool:
 
@@ -105,15 +105,27 @@ Install the `flowzap-mcp` npm package for any compatible coding tool:
   "mcpServers": {
     "flowzap": {
       "command": "npx",
-      "args": ["-y", "flowzap-mcp"]
+      "args": ["-y", "flowzap-mcp@2.2.1"]
     }
   }
 }
 ```
 
-**Compatible with 11 coding tools:** Claude Desktop, Claude Code, Cursor, Windsurf IDE, OpenAI Codex, Warp Terminal, Zed Editor, Cline (VS Code), Roo Code (VS Code), Continue.dev, Sourcegraph Cody.
+Or connect the hosted endpoint, which runs nothing on your machine:
 
-**7 tools available:** `flowzap_validate`, `flowzap_create_playground`, `flowzap_get_syntax`, `flowzap_export_graph`, `flowzap_artifact_to_diagram`, `flowzap_diff`, `flowzap_apply_change`
+```json
+{
+  "mcpServers": {
+    "flowzap": {
+      "url": "https://flowzap.xyz/mcp"
+    }
+  }
+}
+```
+
+**Compatible with any MCP client:** Claude Desktop, Claude Code, Cursor, Antigravity, Devin Desktop (formerly Windsurf), OpenAI Codex, Gemini CLI, GitHub Copilot, Warp Terminal, Zed Editor, Cline, Roo Code, Continue.dev.
+
+**13 tools available:** `flowzap_validate`, `flowzap_fix`, `flowzap_create_playground`, `flowzap_get_syntax`, `flowzap_export_graph`, `flowzap_artifact_to_diagram`, `flowzap_diff`, `flowzap_apply_change`, `flowzap_compliance_check`, `flowzap_mindmap_validate`, `flowzap_mindmap_approve`, `flowzap_mindmap_template`, `flowzap_mindmap_create_playground`
 
 ### URL Parameters
 - `?mode=code` on `/playground/{id}` auto-opens the code editor dialog
@@ -122,7 +134,7 @@ Install the `flowzap-mcp` npm package for any compatible coding tool:
 ---
 
 ## Training Corpus
-For a comprehensive dataset of 200+ real-world examples tailored for LLM training, see:
+For a comprehensive dataset of 356 real-world examples tailored for LLM training, see:
 [flowzap-xyz/sequence-workflows](https://github.com/flowzap-xyz/sequence-workflows)
 
 ---

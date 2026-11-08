@@ -1,6 +1,6 @@
 # FlowZap DSL Syntax Guide
 
-> _Last updated: February 2026 | Official docs: https://flowzap.xyz/flowzap-code
+> _Last updated: November 2026 | Official docs: https://flowzap.xyz/flowzap-code
 
 **FlowZap Code** is a straightforward domain-specific language (DSL) designed for describing business process diagrams visually. Built for real business users—no programming background required.
 
@@ -226,6 +226,47 @@ n12.handle(top) -> couple.n3.handle(bottom) [label="Sends"]
 - Start with main flow (left to right) before adding branches
 - Group related steps in appropriate lanes
 - Test your code by pasting into FlowZap and clicking "Update Diagram"
+
+---
+
+## Loop a section
+
+When a few steps repeat — a retry, a review cycle, a polling loop — declare it with `loop`, after the nodes it covers, inside the lane:
+
+```
+Processor { # Processor
+n1: rectangle label:"Fetch item"
+n2: rectangle label:"Validate"
+n3: diamond label:"Valid?"
+loop [retry until valid] n1 n2 n3
+}
+```
+
+- Syntax: `loop [short condition] nX nY nZ`
+- It sits inside a lane's braces, lists the nodes in the cycle, and cannot be nested
+- The condition text is a label for the reader, not an expression to evaluate
+
+---
+
+## The four views
+
+The same code renders as four different diagrams:
+
+| View | Reads as |
+|------|----------|
+| **Workflow** | BPMN-style process: lanes, steps, decisions, start and end circles |
+| **Sequence** | Participants exchanging messages; cross-lane edges are read in declaration order |
+| **Architecture** | Systems and services as lanes, data flows as edges |
+| **Mind map** | A central topic and its branches |
+
+Two habits keep all four readable: start with a `circle`, finish with a `circle` that states the outcome, and define cross-lane edges in the order they happen.
+
+**Mind map rules:**
+- Only `circle` and `rectangle` are rendered — `diamond` and `taskbox` raise an error
+- The first `circle` is the central root; further circles are dropped
+- Arrow directions are ignored: connectivity alone builds the tree
+- Cross-links between branches are allowed and encouraged
+- Labels over 40 characters and depth beyond 5 levels raise a warning
 
 ---
 
